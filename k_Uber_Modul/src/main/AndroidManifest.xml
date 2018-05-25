@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="at.fhj.swd.k_uber">
+    package="at.fhj.swd.k_uber"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".KUberApplication"
@@ -34,9 +38,14 @@
             android:name=".RecipesActivity"
             android:label="@string/recipestitle"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ItemActivity"
+        <activity
+            android:name=".ItemActivity"
             android:label="@string/itemtitle"
-           android:parentActivityName=".RecipesActivity" />
+            android:parentActivityName=".RecipesActivity" />
+        <activity
+            android:name=".RecipeRVActivity"
+            android:parentActivityName=".RecipesActivity" />
+        <activity android:name=".RecipeDetailActivity"></activity>
     </application>
 
 </manifest>

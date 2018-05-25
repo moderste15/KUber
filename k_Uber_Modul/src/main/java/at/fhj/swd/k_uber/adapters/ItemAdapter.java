@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import at.fhj.swd.k_uber.R;
 import at.fhj.swd.k_uber.models.StockItemDO;
@@ -15,9 +16,9 @@ import at.fhj.swd.k_uber.models.StockItemDO;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
 
-    private final ArrayList<StockItemDO> items;
+    private final List<StockItemDO> items;
 
-    public ItemAdapter(ArrayList<StockItemDO> items) {
+    public ItemAdapter(List<StockItemDO> items) {
         this.items = items;
     }
 
@@ -41,7 +42,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder  {
 
         public TextView itemName;
         public TextView itemAmount;
@@ -54,4 +55,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             itemLable = itemView.findViewById(R.id.row_lable_tv);
         }
     }
+
 }

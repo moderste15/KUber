@@ -6,23 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".RecipesActivity">
 
-
-
-
-
-
-
-    <ProgressBar
-        android:id="@+id/recipes_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:indeterminateTint="@color/neonBlue"
-        android:progressTint="@color/neonBlue"
+    <Button
+        android:id="@+id/special_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:text="@string/recipe_of_the_day"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:onClick="filter"
+        />
+
+    <Button
+        android:id="@+id/vegi_btn"
+        android:text="@string/vegetarian_recipes_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/special_btn"
+        android:onClick="filter"
+        />
+
+    <Button
+        android:id="@+id/vegan_btn"
+        android:text="@string/vegan_recipes_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vegi_btn"
+        android:onClick="filter"
+        />
+
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>

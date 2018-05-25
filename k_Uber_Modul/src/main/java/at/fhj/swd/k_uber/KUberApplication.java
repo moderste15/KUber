@@ -12,6 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.Toolbar;
 
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobile.client.AWSStartupHandler;
+import com.amazonaws.mobile.client.AWSStartupResult;
+
 import at.fhj.swd.k_uber.helper.PrefUtility;
 
 public class KUberApplication extends Application {
@@ -31,6 +35,13 @@ public class KUberApplication extends Application {
         setupSharedPrefences();
         usingDarkTheme = settings.getBoolean(PrefUtility.DARKMODE, true);
 
+
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
+            @Override
+            public void onComplete(AWSStartupResult awsStartupResult) {
+                Log.i(LOGTAG, "AWSMobileClient is instantiated and you are connected to AWS!");
+            }
+        }).execute();
     }
 
 

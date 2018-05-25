@@ -1,5 +1,7 @@
 package at.fhj.swd.k_uber;
 
+import android.arch.persistence.room.Room;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import at.fhj.swd.k_uber.database.StockItemDataBase;
+import at.fhj.swd.k_uber.helper.ErrorHelper;
+import at.fhj.swd.k_uber.models.StockItemDO;
 
 public class ItemActivity extends AppCompatActivity {
 
@@ -56,8 +63,38 @@ public class ItemActivity extends AppCompatActivity {
         Log.d(LOGTAG, "Amount " + amount.getText().toString());
         Log.d(LOGTAG, "Lable " + itemSpinner.getSelectedItem().toString());
 
-        // TODO persist
+        new DBSaveTask().execute(new StockItemDO(
+                name.getText().toString(),
+                amount.getText().toString(),
+                itemSpinner.getSelectedItem().toString()
+        ));
 
-        finish();
+
+    }
+
+    class DBSaveTask extends AsyncTask<StockItemDO,Void,Void> {
+
+        @Override
+        protected Void doInBackground(StockItemDO... stockItemDOS) {
+            StockItemDataBase db = Room.databaseBuilder(
+                    getApplicationContext(),
+                    StockItemDataBase.class,
+                    "pre-alpha"
+            ).build();
+            try {
+                db.dao().insert(stockItemDOS);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                ErrorHelper.makeError(ItemActivity.this, "DatabaseError", getResources().getString(R.string.insert_error));
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(ItemActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+            ItemActivity.this.finish();
+        }
     }
 }

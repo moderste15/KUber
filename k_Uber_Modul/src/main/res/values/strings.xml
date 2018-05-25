@@ -34,6 +34,12 @@
     <string name="item_save">Save</string>
 
 
+    <!-- Recipes -->
+    <string name="recipe_of_the_day">Recipe of the day</string>
+    <string name="vegetarian_recipes_button">Vegetarian recipes</string>
+    <string name="vegan_recipes_button">Vegan recipes</string>
+
+
     <string-array name="item_label">
         <item></item>
         <item>g</item>
@@ -45,5 +51,10 @@
         <item>portion</item>
     </string-array>
 
+    <!-- Errors -->
+    <string name="insert_error">Your Item could not be safed, please try again. If this coninues to fail, please conntact a developer</string>
+    <string name="error_no_internet">You have no internet connection. Please, check your connection and try again.</string>
+    <string name="error_no_filter">There was no filter set. Please contact the  developers.</string>
+    <string name="error_no_recipe">Sorry, there where no recipes found. There might be some thing wrong with the database.</string>
 
 </resources>

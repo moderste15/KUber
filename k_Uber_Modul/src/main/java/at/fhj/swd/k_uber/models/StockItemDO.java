@@ -15,6 +15,8 @@ public class StockItemDO {
     private String itemAmount;
     @ColumnInfo(name="lable")
     private String itemLable;
+    @ColumnInfo(name = "is_bought")
+    private boolean isBought;
 
     public String getItemName() {
         return itemName;
@@ -48,9 +50,18 @@ public class StockItemDO {
         this.id = id;
     }
 
-    public StockItemDO(String itemName, String itemAmount, String itemLable) {
+    public boolean isBought() {
+        return isBought;
+    }
+
+    public void setBought(boolean bought) {
+        isBought = bought;
+    }
+
+    public StockItemDO(String itemName, String itemAmount, String itemLable, boolean isBought) {
         this.itemName = itemName;
         this.itemAmount = itemAmount;
         this.itemLable = itemLable;
+        this.isBought = isBought;
     }
 }

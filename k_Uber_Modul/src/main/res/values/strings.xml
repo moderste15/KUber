@@ -33,11 +33,16 @@
     <string name="item_amount">Amount</string>
     <string name="item_save">Save</string>
 
+    <!-- ShoppingActivity -->
+    <string name="shoppingtitle">Shopping List</string>
+    <string name="bought_btn">Bought</string>
+
 
     <!-- Recipes -->
     <string name="recipe_of_the_day">Recipe of the day</string>
     <string name="vegetarian_recipes_button">Vegetarian recipes</string>
     <string name="vegan_recipes_button">Vegan recipes</string>
+
 
 
     <string-array name="item_label">
@@ -56,5 +61,8 @@
     <string name="error_no_internet">You have no internet connection. Please, check your connection and try again.</string>
     <string name="error_no_filter">There was no filter set. Please contact the  developers.</string>
     <string name="error_no_recipe">Sorry, there where no recipes found. There might be some thing wrong with the database.</string>
+    <string name="error_unit_fault">The ingrediets in the data base seem to be corrupted.</string>
+
+
 
 </resources>

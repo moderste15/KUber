@@ -8,7 +8,10 @@ public abstract class RecipeHelper {
     public static final String VEGETARIAN = "VEGETARIAN";
     public static final String DESSERT = "DESSERT";
 
-
+    public static final String NAME = "NAME";
+    public static final String TEXT = "TEXT";
+    public static final String INGREDIENTS = "INGREDIENTS";
+    public static final String URL = "URL";
 
 
     public static final String KEY = "KEY";
@@ -18,4 +21,5 @@ public abstract class RecipeHelper {
 
 
     public static final String SEPERATOR = "&";
+    public static final String NEWLINE = "%";
 }

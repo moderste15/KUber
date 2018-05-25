@@ -3,13 +3,20 @@ package at.fhj.swd.k_uber;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobile.client.AWSStartupHandler;
+import com.amazonaws.mobile.client.AWSStartupResult;
+
 import at.fhj.swd.k_uber.helper.ErrorHelper;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static String LOGTAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +25,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ((KUberApplication) getApplicationContext()).applyBackground(this);
 
-
+        connectAWSCognito();
     }
 
+    private void connectAWSCognito() {
+        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
+            @Override
+            public void onComplete(AWSStartupResult awsStartupResult) {
+                Log.i(LOGTAG, "AWSMobileClient is instantiated and you are connected to AWS!");
+            }
+        }).execute();
+    }
 
 
     /*
@@ -48,5 +63,15 @@ public class MainActivity extends AppCompatActivity {
     // Button2
     public void gotoRecipes(View view) {
         startActivity(new Intent(MainActivity.this, RecipesActivity.class));
+    }
+
+    public void gotoSettings(View view) {
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+    }
+
+    public void gotoShoppingList(View view) {
+        Intent i = new Intent(MainActivity.this, StockActivity.class);
+        i.putExtra(StockActivity.ISBOUGHT, false);
+        startActivity(i);
     }
 }

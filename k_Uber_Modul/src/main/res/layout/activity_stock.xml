@@ -29,6 +29,17 @@
                 android:text="@string/add_button"
                 android:textSize="@dimen/header_text"
                 />
+            <Button
+                android:id="@+id/bought_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_height"
+                android:layout_margin="@dimen/card_spacing"
+                android:onClick="boughtItems"
+                android:padding="@dimen/text_padding"
+                android:text="@string/bought_btn"
+                android:visibility="gone"
+                android:textSize="@dimen/header_text"
+                />
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>

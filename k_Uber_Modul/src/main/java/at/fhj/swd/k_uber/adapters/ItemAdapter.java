@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,11 +18,15 @@ import at.fhj.swd.k_uber.models.StockItemDO;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
 
-    private final List<StockItemDO> items;
+    public final List<StockItemDO> items;
+    private final boolean isBought;
 
-    public ItemAdapter(List<StockItemDO> items) {
+
+    public ItemAdapter(List<StockItemDO> items, boolean isBought) {
         this.items = items;
+        this.isBought = isBought;
     }
+
 
     @NonNull
     @Override
@@ -35,6 +41,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         holder.itemName.setText(items.get(position).getItemName());
         holder.itemAmount.setText(items.get(position).getItemAmount());
         holder.itemLable.setText(items.get(position).getItemLable());
+        if (!isBought)
+            holder.itemCheck.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -44,6 +52,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder  {
 
+        public CheckBox itemCheck;
         public TextView itemName;
         public TextView itemAmount;
         public TextView itemLable;
@@ -53,6 +62,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             itemName = itemView.findViewById(R.id.row_name_tv);
             itemAmount = itemView.findViewById(R.id.row_amount_tv);
             itemLable = itemView.findViewById(R.id.row_lable_tv);
+            itemCheck= itemView.findViewById(R.id.row_check);
+            itemCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    items.get(getAdapterPosition()).setBought(isChecked);
+                }
+            });
         }
     }
 

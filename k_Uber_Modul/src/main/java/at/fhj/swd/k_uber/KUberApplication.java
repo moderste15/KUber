@@ -35,13 +35,6 @@ public class KUberApplication extends Application {
         setupSharedPrefences();
         usingDarkTheme = settings.getBoolean(PrefUtility.DARKMODE, true);
 
-
-        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
-            @Override
-            public void onComplete(AWSStartupResult awsStartupResult) {
-                Log.i(LOGTAG, "AWSMobileClient is instantiated and you are connected to AWS!");
-            }
-        }).execute();
     }
 
 

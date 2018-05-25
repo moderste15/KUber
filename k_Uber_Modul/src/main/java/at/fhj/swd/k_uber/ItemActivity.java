@@ -66,7 +66,8 @@ public class ItemActivity extends AppCompatActivity {
         new DBSaveTask().execute(new StockItemDO(
                 name.getText().toString(),
                 amount.getText().toString(),
-                itemSpinner.getSelectedItem().toString()
+                itemSpinner.getSelectedItem().toString(),
+                true
         ));
 
 

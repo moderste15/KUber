@@ -1,8 +1,8 @@
 package at.fhj.swd.k_uber.adapters;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,8 +12,11 @@ import android.widget.TextView;
 import com.amazonaws.models.nosql.RecipeDO;
 
 import java.util.List;
+import java.util.Map;
 
 import at.fhj.swd.k_uber.R;
+import at.fhj.swd.k_uber.RecipeDetailActivity;
+import at.fhj.swd.k_uber.helper.RecipeHelper;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
 
@@ -55,7 +58,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         @Override
         public void onClick(View v) {
             RecipeDO clicked = recipes.get(getAdapterPosition());
-            Log.e("NotError", clicked.getName());
+            Intent i = new Intent(v.getContext(), RecipeDetailActivity.class);
+            i.putExtra(RecipeHelper.NAME, clicked.getName());
+            i.putExtra(RecipeHelper.TEXT, clicked.getText());
+            i.putExtra(RecipeHelper.URL, clicked.getFotoUrl());
+            StringBuilder builder = new StringBuilder();
+            for (Map.Entry<String, String> e: clicked.getIngredients().entrySet())
+                builder.append(e.getKey() + RecipeHelper.SEPERATOR +e.getValue() + RecipeHelper.NEWLINE);
+            i.putExtra(RecipeHelper.INGREDIENTS, builder.toString());
+            v.getContext().startActivity(i);
         }
     }
 }

@@ -15,15 +15,18 @@ import java.util.List;
 
 import at.fhj.swd.k_uber.adapters.ItemAdapter;
 import at.fhj.swd.k_uber.database.StockItemDataBase;
+import at.fhj.swd.k_uber.helper.RecipeHelper;
 import at.fhj.swd.k_uber.models.StockItemDO;
 
 public class StockActivity extends AppCompatActivity {
 
 
+    public static final String ISBOUGHT = "ISBOUGHT";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private ArrayList<StockItemDO> items;
+    private List<StockItemDO> items;
 
+    private static boolean isBought = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,13 @@ public class StockActivity extends AppCompatActivity {
         ((KUberApplication) getApplicationContext()).applyBackground(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        isBought = getIntent().getBooleanExtra(ISBOUGHT, true);
+        if (!isBought) {
+            setTitle(getResources().getString(R.string.shoppingtitle));
+            findViewById(R.id.add_btn).setVisibility(View.GONE);
+            findViewById(R.id.bought_btn).setVisibility(View.VISIBLE);
+        }
 
         findViews();
         setupRV();
@@ -71,6 +81,9 @@ public class StockActivity extends AppCompatActivity {
         startActivity(new Intent(StockActivity.this, ItemActivity.class));
     }
 
+    public void boughtItems(View view) {
+
+    }
 
 
     class DBTask extends AsyncTask<Void, Void, Void> {
@@ -86,7 +99,11 @@ public class StockActivity extends AppCompatActivity {
                     "pre-alpha"
             ).build();
 
-            items = db.dao().getAllUsers();
+            List<StockItemDO> result = db.dao().getAllItems();
+            for (StockItemDO item : result)
+                if (item.isBought() == StockActivity.isBought) // only add to stock if bought
+                    items.add(item);
+
             return null;
         }
 
@@ -94,8 +111,24 @@ public class StockActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             // Fill recycler view
-            adapter = new ItemAdapter(items);
+            adapter = new ItemAdapter(items, isBought);
             recyclerView.setAdapter(adapter);
+        }
+    }
+
+    class DBUpdateTask extends AsyncTask<StockItemDO, Void, Void> {
+
+
+        @Override
+        protected Void doInBackground(StockItemDO... stockItemDOS) {
+            StockItemDataBase db = Room.databaseBuilder(
+                    getApplicationContext(),
+                    StockItemDataBase.class,
+                    "pre-alpha"
+            ).build();
+
+            db.dao().update(stockItemDOS);
+            return null;
         }
     }
 

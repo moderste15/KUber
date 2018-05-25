@@ -35,6 +35,10 @@
     <string name="vegetarian_recipes_button">Vegetarische Rezepte</string>
     <string name="vegan_recipes_button">Vegane Rezepte</string>
 
+    <!-- ShoppingActivity -->
+    <string name="shoppingtitle">Einkaufsliste</string>
+    <string name="bought_btn">Gekauft</string>
+
     <string-array name="item_label">
         <item></item>
         <item>g</item>
@@ -50,5 +54,6 @@
     <string name="error_no_internet">Sie haben keine Internetverbindung. Bitte, überprüfen sie die Einstellungen und versuchen sie es noch einmal</string>
     <string name="insert_error">Das Produkt konnte nicht gespeichert werden. Sollte dieser Fehler weiterhin auftreten, bitte kontaktieren sie die Entwickler</string>
     <string name="error_no_filter">Der Filter wurde nicht richtig gesetzt. Bitte informieren sie die Entwickler</string>
+    <string name="error_unit_fault">Die Zutaten in der Datenbank sind fehlerhaft.</string>
 
 </resources>

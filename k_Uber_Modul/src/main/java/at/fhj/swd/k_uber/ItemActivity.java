@@ -2,6 +2,7 @@ package at.fhj.swd.k_uber;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,7 @@ public class ItemActivity extends AppCompatActivity {
     private Spinner itemSpinner;
     private EditText name;
     private EditText amount;
+
 
 
     @Override
@@ -53,5 +55,9 @@ public class ItemActivity extends AppCompatActivity {
         Log.d(LOGTAG, "Name " + name.getText().toString());
         Log.d(LOGTAG, "Amount " + amount.getText().toString());
         Log.d(LOGTAG, "Lable " + itemSpinner.getSelectedItem().toString());
+
+        // TODO persist
+
+        finish();
     }
 }

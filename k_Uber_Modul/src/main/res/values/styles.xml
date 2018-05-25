@@ -1,0 +1,72 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!-- Base application theme. Helps with start of app. Btw, some apps don't do that e.g. telegram-->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar" >
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/black</item>
+    </style>
+
+
+    <!-- Light theme -->
+    <style name="BaseTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/kuberRed</item>
+        <item name="colorPrimaryDark">@color/kuberRedDark</item>
+        <item name="colorAccent">@color/kuberBlue</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="cardViewStyle">@style/BaseCV</item>
+        <item name="android:buttonStyle">@style/BaseButton</item>
+    </style>
+    <style name="BaseThemeNoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/kuberRed</item>
+        <item name="colorPrimaryDark">@color/kuberRedDark</item>
+        <item name="colorAccent">@color/kuberBlue</item>
+        <item name="android:background">@color/kuberWhite</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+    <style name="BaseCV" parent="CardView">
+        <item name="cardBackgroundColor">@color/kuberLightBlue</item>
+    </style>
+    <style name="BaseButton" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/base_kuber_btn</item>
+    </style>
+
+
+    <!-- Dark theme -->
+    <style name="NeonDarkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/neonGrey</item>
+        <item name="colorPrimaryDark">@color/neonVoid</item>
+        <item name="colorAccent">@color/neonBlue</item>
+        <item name="android:textColor">@color/neonWhite</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="cardViewStyle">@style/NeonCV</item>
+        <item name="android:buttonStyle">@style/NeonButton</item>
+        <item name="editTextStyle">@style/NeonEditText</item>
+    </style>
+    <style name="NeonDarkThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/neonVoid</item>
+        <item name="colorPrimaryDark">@color/neonGrey</item>
+        <item name="colorAccent">@color/neonBlue</item>
+        <item name="android:textColor">@color/neonWhite</item>
+        <item name="android:colorBackground">@color/neonVoid</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+    <style name="NeonCV" parent="CardView">
+        <item name="cardBackgroundColor">@color/neonBlue</item>
+    </style>
+    <style name="NeonButton" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/neonWhite</item>
+        <item name="android:background">@drawable/neon_kuber_btn</item>
+    </style>
+    <style name="NeonEditText" parent="android:Widget.EditText">
+        <item name="android:textColor">@color/neonWhite</item>
+    </style>
+
+
+</resources>

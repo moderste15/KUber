@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="kuberGrey">#787878</color>
+    <color name="kuberRed">#FFB00000</color>
+    <color name="kuberBlue">#FF0B75F9</color>
+    <color name="kuberLightBlue">#AA2B95F9</color>
+    <color name="kuberWhite">#FFFFFFFF</color>
+
+    <color name="kuberGreyDark">#FF686868</color>
+    <color name="kuberRedDark">#FF900000</color>
+    <color name="kuberBlueDark">#FF0963E7</color>
+
+    <color name="neonVoid">#FF121617</color>
+    <color name="neonGrey">#FF1e1e1e</color>
+    <color name="neonBlue">#FF3872a4</color>
+    <color name="neonWhite">#FFf1faff</color>
+    <color name="neonCard">#FF243443</color>
+
+    <color name="black">#000000</color>
+
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deutsch -->
+
+    <!-- Mainmenu -->
+    <string name="home">Hauptmenü</string>
+    <string name="stock_button">Lagerbestand</string>
+    <string name="recipes_button">Rezepte</string>
+    <string name="shopping_list_button">Einkaufsliste</string>
+
+    <!-- ErrorActivity -->
+    <string name="errortitle">Fehler</string>
+
+    <!-- Settings -->
+    <string name="dark_bg">Dunkler Hintergrund</string>
+    <string name="settingstilte">Einstellungen</string>
+    <string name="save">Speichern</string>
+
+    <!-- StockActivity -->
+    <string name="stocktitle">Lagerbestand</string>
+    <string name="add_button">Hinzufügen</string>
+
+
+    <!-- RecipesActivity -->
+    <string name="recipestitle">Rezepte</string>
+
+    <!-- ItemActivity -->
+    <string name="itemtitle">Hinzufügen</string>
+    <string name="item_name">Bezeichnung</string>
+    <string name="item_amount">Menge</string>
+    <string name="item_save">Speichern</string>
+
+
+    <string-array name="item_label">
+        <item></item>
+        <item>g</item>
+        <item>kg</item>
+        <item>mL</item>
+        <item>L</item>
+        <item>Stück</item>
+        <item>Packung</item>
+        <item>Portion</item>
+    </string-array>
+
+</resources>

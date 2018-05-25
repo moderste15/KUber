@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">K-Uber</string>
+
+
+    <!-- Mainmenu -->
+    <string name="home">Home</string>
+    <string name="stock_button">Stock</string>
+    <string name="recipes_button">Recipes</string>
+    <string name="shopping_list_button">Shopping List</string>
+
+    <!-- ErrorActivity -->
+    <string name="errortitle">Error</string>
+    <string name="error_title_placeholder">Error-Title-Placeholder</string>
+    <string name="error_text_placeholder">Error-Text-Placeholder</string>
+
+    <!-- SettingsActivity -->
+    <string name="dark_bg">Dark background</string>
+    <string name="settingstilte">Settings</string>
+    <string name="save">Save</string>
+
+    <!-- StockActivity -->
+    <string name="stocktitle">Stock</string>
+    <string name="add_button">Add</string>
+
+
+    <!-- RecipesActivity -->
+    <string name="recipestitle">Recipes</string>
+
+
+    <!-- ItemActivity -->
+    <string name="itemtitle">Add Item</string>
+    <string name="item_name">Name</string>
+    <string name="item_amount">Amount</string>
+    <string name="item_save">Save</string>
+
+
+    <string-array name="item_label">
+        <item></item>
+        <item>g</item>
+        <item>kg</item>
+        <item>mL</item>
+        <item>L</item>
+        <item>pieces</item>
+        <item>package</item>
+        <item>portion</item>
+    </string-array>
+
+
+</resources>

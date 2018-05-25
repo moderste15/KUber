@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/lagerstand_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:text="@string/stock_button"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="gotoStock"
+         />
+
+    <Button
+        android:id="@+id/rezepte_btn"
+        android:text="@string/recipes_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lagerstand_btn"
+        android:onClick="gotoRecipes"
+        />
+
+    <Button
+        android:id="@+id/einkaufsliste_btn"
+        android:text="@string/shopping_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rezepte_btn"
+        />
+
+    <Button
+        android:id="@+id/settings_btn"
+        android:text="@string/settingstilte"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:padding="@dimen/text_padding"
+        android:textSize="@dimen/header_text"
+        android:layout_margin="@dimen/card_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/einkaufsliste_btn"
+        />
+
+</android.support.constraint.ConstraintLayout>

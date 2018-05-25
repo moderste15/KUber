@@ -26,7 +26,7 @@ public class RecipeProvider {
     public List<RecipeDO> getRecipes() {
         DynamoDBMapper mapper = getDynamoDBMapper();
         PaginatedList<RecipeDO> list = mapper.scan(RecipeDO.class, new DynamoDBScanExpression());
-                return list;
+        return list;
     }
 
 

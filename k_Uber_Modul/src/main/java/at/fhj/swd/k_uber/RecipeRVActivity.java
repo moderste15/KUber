@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.amazonaws.models.nosql.RecipeDO;
@@ -74,6 +75,7 @@ public class RecipeRVActivity extends AppCompatActivity {
             List<RecipeDO> result = RecipeProvider.getInstance(RecipeRVActivity.this).getRecipes();
             recipes = new ArrayList<>();
             for (RecipeDO rdo : result) {
+                Log.d("Help", rdo.getName());
                 if (rdo.getType().contains(filter))
                     recipes.add(rdo);
             }

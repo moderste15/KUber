@@ -1,6 +1,9 @@
 package at.fhj.swd.k_uber.adapters;
 
+import android.app.Activity;
+import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +19,10 @@ import java.util.Map;
 
 import at.fhj.swd.k_uber.R;
 import at.fhj.swd.k_uber.RecipeDetailActivity;
+import at.fhj.swd.k_uber.database.StockItemDataBase;
+import at.fhj.swd.k_uber.helper.ErrorHelper;
 import at.fhj.swd.k_uber.helper.RecipeHelper;
+import at.fhj.swd.k_uber.models.StockItemDO;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
 
@@ -69,4 +75,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             v.getContext().startActivity(i);
         }
     }
+
+
 }

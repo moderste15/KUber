@@ -1,6 +1,7 @@
 package at.fhj.swd.k_uber.helper;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -47,6 +48,7 @@ public abstract class ErrorHelper {
         activity.startActivity(intent);
         activity.finish();
     }
+
 
     /**
      * starts ErrorActivity with given message

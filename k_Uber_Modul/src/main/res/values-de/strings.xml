@@ -40,7 +40,6 @@
     <string name="bought_btn">Gekauft</string>
 
     <string-array name="item_label">
-        <item></item>
         <item>g</item>
         <item>kg</item>
         <item>mL</item>

@@ -15,7 +15,6 @@ import java.util.List;
 
 import at.fhj.swd.k_uber.adapters.ItemAdapter;
 import at.fhj.swd.k_uber.database.StockItemDataBase;
-import at.fhj.swd.k_uber.helper.RecipeHelper;
 import at.fhj.swd.k_uber.models.StockItemDO;
 
 public class StockActivity extends AppCompatActivity {
@@ -82,7 +81,10 @@ public class StockActivity extends AppCompatActivity {
     }
 
     public void boughtItems(View view) {
-
+        Intent i = new Intent(StockActivity.this, StockActivity.class);
+        i.putExtra(ISBOUGHT, false);
+        startActivity(i);
+        finish();
     }
 
 
@@ -111,7 +113,7 @@ public class StockActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             // Fill recycler view
-            adapter = new ItemAdapter(items, isBought);
+            adapter = new ItemAdapter(items, isBought, StockActivity.this);
             recyclerView.setAdapter(adapter);
         }
     }

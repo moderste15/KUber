@@ -42,7 +42,8 @@
     <string name="recipe_of_the_day">Recipe of the day</string>
     <string name="vegetarian_recipes_button">Vegetarian recipes</string>
     <string name="vegan_recipes_button">Vegan recipes</string>
-
+    <string name="add">Add</string>
+    <string name="add_int">Added ingredients to shopping list.</string>
 
 
     <string-array name="item_label">

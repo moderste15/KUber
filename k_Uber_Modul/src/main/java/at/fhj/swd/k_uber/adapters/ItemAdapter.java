@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -138,13 +139,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                             }
                         }
                         item.setItemAmount(Double.toString(boughtAmount+isAmount));
-
+                        db.dao().update(item);
                     }
 
                 }
             }
-            if (!found) // was not in there == safe
-                db.dao().insert(stockItemDOS);
+            db.dao().update(stockItemDOS);
 
             return null;
         }

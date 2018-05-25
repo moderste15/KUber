@@ -34,6 +34,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:onClick="addIngredients"/>
+
+
             <TextView
                 android:id="@+id/detail_name_tv"
                 android:layout_width="wrap_content"

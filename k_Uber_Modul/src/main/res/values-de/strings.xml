@@ -34,6 +34,8 @@
     <string name="recipe_of_the_day">Rezept des Tages</string>
     <string name="vegetarian_recipes_button">Vegetarische Rezepte</string>
     <string name="vegan_recipes_button">Vegane Rezepte</string>
+    <string name="add">Hinzufügen</string>
+    <string name="add_int">Zutaten wurden zur Einkaufsliste hinzugefügt.</string>
 
     <!-- ShoppingActivity -->
     <string name="shoppingtitle">Einkaufsliste</string>

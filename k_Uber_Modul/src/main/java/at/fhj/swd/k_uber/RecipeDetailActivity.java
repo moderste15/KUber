@@ -139,7 +139,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
                                 return null;
                             }
                         }
-                        stockItemDOS[0].setItemAmount(Double.toString(needAmount - isAmount));
+                        if (needAmount -isAmount > 0)
+                            stockItemDOS[0].setItemAmount(Double.toString(needAmount - isAmount));
                         db.dao().insert(stockItemDOS);
                     }
 
